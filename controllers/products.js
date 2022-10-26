@@ -2,6 +2,7 @@ const express = require("express");
 const productRouter = express.Router();
 const Product = require("../models/products");
 const productSeed = require("../models/seed");
+
 // -=-index-=-
 // '/' = '/products'
 productRouter.get("/", (req, res) => {
@@ -12,27 +13,42 @@ productRouter.get("/", (req, res) => {
     });
   });
 });
+
 // -=-new-=-
 productRouter.get("/new", (req, res) => {
   res.render("new.ejs", {
     tabTitle: "New",
   });
 });
+
 // -=-delete-=-
 productRouter.delete("/:id", (req, res) => {
   Product.findByIdAndRemove(req.params.id, (err, deletedBook) => {
     res.redirect("/products");
   });
 });
+
 // -=-update-=-
 // -=-create-=-
+
 productRouter.post("/", (req, res) => {
-  Product.create(req.body, (error, createdProduct) => {
+  Product.create(req.body, (err, createdProduct) => {
     res.redirect("/products");
   });
 });
+
 // -=-edit-=-
+productRouter.get("/:id/edit", (req, res) => {
+  Product.findById(req.params.id, (err, foundProduct) => {
+    res.render("edit.ejs", {
+      product: foundProduct,
+      index: req.params.id,
+      tabTitle: "Edit",
+    });
+  });
+});
 // -=-show-=-
+
 productRouter.get("/:id", (req, res) => {
   Product.findById(req.params.id, (err, foundProduct) => {
     res.render("show.ejs", {
@@ -43,8 +59,8 @@ productRouter.get("/:id", (req, res) => {
 });
 
 productRouter.get("/seed", (req, res) => {
-  Product.deleteMany({}, (error, allBooks) => {});
-  Product.create(productSeed, (error, data) => {
+  Product.deleteMany({}, (err, allBooks) => {});
+  Product.create(productSeed, (err, data) => {
     res.redirect("/products");
   });
 });
