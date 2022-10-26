@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head.ejs')%>
+  </head>
+  <body>
+    <div class="container">
+      <h1>New Page</h1>
+      <form action="/products" method="POST">
+        <!-- -=-name-=- -->
+        <label for="name">Name</label>
+        <input type="text" name="name" id="" /><br />
+
+        <!-- -=-description-=- -->
+        <label for="description">Description</label>
+        <input type="textarea" name="description" id="" /><br />
+
+        <!-- -=-img-=- -->
+        <label for="img">Image(URL)</label>
+        <input type="text" name="img" id="" /><br />
+
+        <!-- -=-price-=- -->
+        <label for="price">Price(USD)</label>
+        <input type="text" name="price" id="" /><br />
+
+        <!-- -=-qty-=- -->
+        <label for="qty">Quantity</label>
+        <input type="text" name="qty" id="" /><br />
+
+        <input type="submit" value="Submit" />
+      </form>
+
+      <a href="/products">Back to homepage</a>
+    </div>
+  </body>
+</html>
