@@ -13,11 +13,29 @@ productRouter.get("/", (req, res) => {
   });
 });
 // -=-new-=-
+productRouter.get("/new", (req, res) => {
+  res.render("new.ejs", {
+    tabTitle: "New",
+  });
+});
 // -=-delete-=-
 // -=-update-=-
 // -=-create-=-
+productRouter.post("/", (req, res) => {
+  Product.create(req.body, (error, createdProduct) => {
+    res.redirect("/products");
+  });
+});
 // -=-edit-=-
 // -=-show-=-
+productRouter.get("/:id", (req, res) => {
+  Product.findById(req.params.id, (err, foundProduct) => {
+    res.render("show.ejs", {
+      product: foundProduct,
+      tabTitle: foundProduct.name,
+    });
+  });
+});
 
 productRouter.get("/seed", (req, res) => {
   Product.deleteMany({}, (error, allBooks) => {});
