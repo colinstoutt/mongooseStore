@@ -1,0 +1,20 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.container {
+  margin: 5rem auto 5rem auto;
+  max-width: 80rem;
+}
+h1 {
+  font-size: 7rem;
+  text-align: center;
+}
+.product-container {
+  display: flex;
+  gap: 2rem;
+}
