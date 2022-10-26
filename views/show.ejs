@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head.ejs')%>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Show page</h1>
+      <h2 class="product-name"><%= product.name %></h2>
+      <img class="product-img" src="<%= product.img %>" alt="" />
+      <p class="product-description"><%= product.description %></p>
+      <p class="product-stock"><%= product.qty %> in stock</p>
+      <p class="product-price">Price: <%= product.price %></p>
+
+      <a href="/products">Back to homepage</a>
+    </div>
+  </body>
+</html>
