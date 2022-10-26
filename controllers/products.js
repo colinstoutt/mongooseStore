@@ -29,8 +29,18 @@ productRouter.delete("/:id", (req, res) => {
 });
 
 // -=-update-=-
-// -=-create-=-
+productRouter.put("/:id", (req, res) => {
+  Product.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+    { new: true },
+    (err, updatedBook) => {
+      res.redirect(`/products/${req.params.id}`);
+    }
+  );
+});
 
+// -=-create-=-
 productRouter.post("/", (req, res) => {
   Product.create(req.body, (err, createdProduct) => {
     res.redirect("/products");
