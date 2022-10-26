@@ -19,6 +19,11 @@ productRouter.get("/new", (req, res) => {
   });
 });
 // -=-delete-=-
+productRouter.delete("/:id", (req, res) => {
+  Product.findByIdAndRemove(req.params.id, (err, deletedBook) => {
+    res.redirect("/products");
+  });
+});
 // -=-update-=-
 // -=-create-=-
 productRouter.post("/", (req, res) => {
