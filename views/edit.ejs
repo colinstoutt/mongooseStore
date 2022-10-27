@@ -12,7 +12,7 @@
       <form action="/products/<%= product._id %>?_method=PUT" method="POST">
         <!-- -=-name-=- -->
         <label for="name">Name</label>
-        <input type="text" value="<%= product.name %>" /><br />
+        <input type="text" value="<%= product.name %>" name="name" /><br />
 
         <!-- -=-description-=- -->
         <label for="description">Description</label>
