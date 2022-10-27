@@ -1,25 +1,25 @@
 const productSeed = [
   {
-    name: "Beans",
+    name: "Goldfish",
     description:
       "A small pile of beans. Buy more beans for a big pile of beans.",
-    img: "https://imgur.com/LEHS8h3.png",
-    price: 5,
-    qty: 99,
+    img: "https://i.imgur.com/yMFlSmu.jpg",
+    price: 2,
+    qty: 43,
   },
   {
-    name: "Bones",
+    name: "Anthia",
     description: "It's just a bag of bones.",
-    img: "https://imgur.com/dalOqwk.png",
+    img: "https://i.imgur.com/JPLXusc.jpg",
     price: 25,
-    qty: 0,
+    qty: 14,
   },
   {
-    name: "Bins",
+    name: "Orange Koi",
     description: "A stack of colorful bins for your beans and bones.",
-    img: "https://imgur.com/ptWDPO1.png",
-    price: 7000,
-    qty: 1,
+    img: "https://i.imgur.com/JTwTbPK.jpg",
+    price: 450,
+    qty: 3,
   },
 ];
 module.exports = productSeed;

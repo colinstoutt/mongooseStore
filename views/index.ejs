@@ -4,21 +4,29 @@
     <%- include('./partials/head.ejs')%>
   </head>
   <body>
+    <nav>
+      <a href="/products"><i class="fa-solid fa-fish-fins"></i></a>
+    </nav>
+
     <div class="container">
-      <h1>Bins Bones 'n Beans</h1>
-      <a href="products/new">Add a new product</a>
+      <h1>Northwest Fish</h1>
+
       <div class="product-container">
         <% product.forEach(product => { %>
         <div class="product-card">
           <p class="product-name"><%= product.name %></p>
-          <a href="products/<%= product._id %>"
-            ><img src="<%= product.img %>" alt="" class="product-img"
-          /></a>
-          <p class="product-stock"><%= product.qty %> in stock</p>
-          <p class="product-price">Price: <%= product.price %></p>
+          <div class="img-container">
+            <a href="products/<%= product._id %>"
+              ><img src="<%= product.img %>" alt="" class="index-img"
+            /></a>
+            <p class="product-price">$<%= product.price %></p>
+          </div>
+
+          <p class="product-stock">Qty: <%= product.qty %></p>
         </div>
         <% }) %>
       </div>
+      <a class="new-fish" href="products/new">Add a new fish</a>
     </div>
   </body>
 </html>

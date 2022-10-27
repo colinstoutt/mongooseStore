@@ -4,6 +4,9 @@
     <%- include('./partials/head.ejs')%>
   </head>
   <body>
+    <nav>
+      <a href="/products"><i class="fa-solid fa-fish-fins"></i></a>
+    </nav>
     <div class="container">
       <h1>Edit Product</h1>
       <form action="/products/<%= product._id %>?_method=PUT" method="POST">
@@ -31,10 +34,8 @@
         <label for="qty">Quantity</label>
         <input type="text" name="qty" value="<%= product.qty %>" /><br />
 
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Edit Fish" />
       </form>
-
-      <a href="/products">Back to homepage</a>
     </div>
   </body>
 </html>

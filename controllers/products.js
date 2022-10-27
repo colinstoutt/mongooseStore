@@ -13,21 +13,18 @@ productRouter.get("/", (req, res) => {
     });
   });
 });
-
 // -=-new-=-
 productRouter.get("/new", (req, res) => {
   res.render("new.ejs", {
     tabTitle: "New",
   });
 });
-
 // -=-delete-=-
 productRouter.delete("/:id", (req, res) => {
   Product.findByIdAndRemove(req.params.id, (err, deletedBook) => {
     res.redirect("/products");
   });
 });
-
 // -=-update-=-
 productRouter.put("/:id", (req, res) => {
   Product.findByIdAndUpdate(
@@ -39,14 +36,12 @@ productRouter.put("/:id", (req, res) => {
     }
   );
 });
-
 // -=-create-=-
 productRouter.post("/", (req, res) => {
   Product.create(req.body, (err, createdProduct) => {
     res.redirect("/products");
   });
 });
-
 // -=-edit-=-
 productRouter.get("/:id/edit", (req, res) => {
   Product.findById(req.params.id, (err, foundProduct) => {
@@ -58,7 +53,6 @@ productRouter.get("/:id/edit", (req, res) => {
   });
 });
 // -=-show-=-
-
 productRouter.get("/:id", (req, res) => {
   Product.findById(req.params.id, (err, foundProduct) => {
     res.render("show.ejs", {
@@ -67,7 +61,7 @@ productRouter.get("/:id", (req, res) => {
     });
   });
 });
-
+// -=-seed-=-
 productRouter.get("/seed", (req, res) => {
   Product.deleteMany({}, (err, allBooks) => {});
   Product.create(productSeed, (err, data) => {

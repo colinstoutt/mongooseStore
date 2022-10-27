@@ -4,6 +4,9 @@
     <%- include('./partials/head.ejs')%>
   </head>
   <body>
+    <nav>
+      <a href="/products"><i class="fa-solid fa-fish-fins"></i></a>
+    </nav>
     <div class="container">
       <h1>New Page</h1>
       <form action="/products" method="POST">
@@ -17,7 +20,7 @@
 
         <!-- -=-img-=- -->
         <label for="img">Image(URL)</label>
-        <input type="text" name="img" id="" /><br />
+        <input type="url" name="img" id="" /><br />
 
         <!-- -=-price-=- -->
         <label for="price">Price(USD)</label>
@@ -27,10 +30,8 @@
         <label for="qty">Quantity</label>
         <input type="text" name="qty" id="" /><br />
 
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Add Fish" />
       </form>
-
-      <a href="/products">Back to homepage</a>
     </div>
   </body>
 </html>
