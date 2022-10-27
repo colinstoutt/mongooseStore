@@ -72,12 +72,16 @@ h1 {
   font-weight: 200;
   margin: 0;
   padding: 0.5rem 0;
-  background-color: rgb(30, 30, 30);
+  background-color: rgb(23, 23, 23);
   color: rgb(255, 255, 255);
   border-radius: 1rem 1rem 0 0;
 }
 .img-container {
   position: relative;
+}
+.img-container span {
+  font-size: 1.7rem;
+  color: rgb(24, 233, 163);
 }
 .product-price {
   position: absolute;
@@ -91,7 +95,7 @@ h1 {
 .product-stock {
   padding: 1rem 0;
   color: rgb(255, 255, 255);
-  background-color: rgb(30, 30, 30);
+  background-color: rgb(23, 23, 23);
   margin: -0.5rem 0 0 0;
   font-weight: 300;
   border-radius: 0 0 1rem 1rem;
@@ -134,7 +138,7 @@ h1 {
   font-weight: 200;
 }
 p span {
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: rgb(255, 255, 255);
 }
 .show-description {
@@ -152,6 +156,7 @@ p span {
   text-align: center;
   font-size: 1.4rem;
 }
+
 #show-stock {
   background: none;
   color: rgb(255, 255, 255);
@@ -160,13 +165,23 @@ p span {
   font-weight: 300;
   font-size: 2rem;
 }
-button {
+#buy-now {
   border: none;
   color: rgb(14, 14, 14);
   background-color: rgb(255, 255, 255);
   border-radius: 5px;
-  padding: 0.5rem 1rem;
+  padding: 0.3rem 1rem;
   text-align: center;
+  border: 1px solid rgb(0, 0, 0);
+  margin: 0;
+  font-size: 1.8rem;
+  text-decoration: none;
+}
+#buy-now:hover {
+  cursor: pointer;
+}
+#buy-now:active {
+  background-color: rgb(209, 209, 209);
 }
 
 #delete {
@@ -180,6 +195,9 @@ button {
   padding: 0;
   margin: 0;
   font-size: 1.4rem;
+}
+#delete:hover {
+  cursor: pointer;
 }
 /* new.ejs */
 form label {

@@ -28,7 +28,9 @@
       </div>
       <div class="buy">
         <p class="product-stock" id="show-stock">Qty: <%= product.qty %></p>
-        <button>Buy now</button>
+        <form action="/products/<%= product._id %>?_method=PUT" method="POST">
+          <input id="buy-now" type="submit" value="Buy Now" />
+        </form>
       </div>
     </div>
   </body>
