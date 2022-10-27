@@ -31,11 +31,21 @@ productRouter.put("/:id", (req, res) => {
     req.params.id,
     req.body,
     { new: true },
-    (err, updatedBook) => {
+    (err, updatedProduct) => {
       res.redirect(`/products/${req.params.id}`);
     }
   );
 });
+// -=-buy-=-
+// productRouter.put("/:id", (req, res) => {
+//   Product.findOneAndUpdate(
+//     { qty },
+//     { qty: (qty -= 1) },
+//     (err, updatedProduct) => {
+//       res.redirect(`/products/${req.params.id}`);
+//     }
+//   );
+// });
 // -=-create-=-
 productRouter.post("/", (req, res) => {
   Product.create(req.body, (err, createdProduct) => {
