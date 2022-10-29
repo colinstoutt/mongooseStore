@@ -61,11 +61,12 @@ h1 {
   font-size: 1.5rem;
   box-shadow: rgba(24, 233, 163, 0.401) 0px 1px 3px 0px,
     rgba(255, 255, 255, 0.292) 0px 0px 0px 1px;
-  border-radius: 1rem;
+  width: 30rem;
+  border-radius: 0.5rem;
 }
 .index-img {
-  width: 20rem;
-  height: 20rem;
+  width: 30rem;
+  height: 30rem;
   object-fit: cover;
 }
 
@@ -140,10 +141,11 @@ h1 {
   font-size: 3rem;
   font-weight: 200;
   margin-top: 1rem;
+  color: rgb(24, 233, 163);
 }
 p span {
   font-size: 2rem;
-  color: rgb(255, 255, 255);
+  color: rgb(24, 233, 163);
 }
 .show-description {
   font-size: 2rem;
@@ -155,7 +157,6 @@ p span {
   text-decoration: none;
   color: rgb(14, 14, 14);
   background-color: rgb(255, 255, 255);
-  border-radius: 5px;
   padding: 0.2rem 1rem;
   text-align: center;
   font-size: 2rem;
@@ -173,13 +174,13 @@ p span {
   border: none;
   color: rgb(14, 14, 14);
   background-color: rgb(255, 255, 255);
-  border-radius: 5px;
   padding: 0.3rem 1rem;
   text-align: center;
   border: 1px solid rgb(0, 0, 0);
   margin: 0;
   font-size: 1.8rem;
   text-decoration: none;
+  border-radius: 0;
 }
 #buy-now:hover {
   cursor: pointer;
