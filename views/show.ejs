@@ -27,10 +27,17 @@
         </form>
       </div>
       <div class="buy">
+        <% if (product.qty > 0){ %>
         <p class="product-stock" id="show-stock">Qty: <%= product.qty %></p>
-        <form action="/products/<%= product._id %>?_method=PUT" method="POST">
+        <form
+          action="/products/<%= product._id %>/buy?_method=PUT"
+          method="POST"
+        >
           <input id="buy-now" type="submit" value="Buy Now" />
         </form>
+        <% } else { %>
+        <p>Out of Stock</p>
+        <% } %>
       </div>
     </div>
   </body>

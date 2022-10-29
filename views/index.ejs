@@ -22,7 +22,11 @@
             <p class="product-price"><span>$</span><%= product.price %></p>
           </div>
 
+          <% if (product.qty <= 0) { %>
+          <p class="product-stock">Out of Stock</p>
+          <% } else {%>
           <p class="product-stock">Qty: <%= product.qty %></p>
+          <% } %>
         </div>
         <% }) %>
       </div>

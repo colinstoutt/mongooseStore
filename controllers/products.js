@@ -1,8 +1,17 @@
 const express = require("express");
+const { findByIdAndUpdate } = require("../models/products");
 const productRouter = express.Router();
 const Product = require("../models/products");
 const productSeed = require("../models/seed");
 
+// -=-seed-=-
+productRouter.get("/seed", (req, res) => {
+    Product.deleteMany({}, (err, allBooks) => {});
+    Product.create(productSeed, (err, data) => {
+      res.redirect("/products");
+    });
+  });
+  
 // -=-index-=-
 // '/' = '/products'
 productRouter.get("/", (req, res) => {
@@ -36,16 +45,19 @@ productRouter.put("/:id", (req, res) => {
     }
   );
 });
+
 // -=-buy-=-
-// productRouter.put("/:id", (req, res) => {
-//   Product.findOneAndUpdate(
-//     { qty },
-//     { qty: (qty -= 1) },
-//     (err, updatedProduct) => {
-//       res.redirect(`/products/${req.params.id}`);
-//     }
-//   );
-// });
+productRouter.put("/:id/buy", (req, res) => { 
+  Product.findByIdAndUpdate(
+        req.params.id, 
+        req.body, 
+    (err, updatedQty) => {
+        updatedQty.qty -= 1;
+        updatedQty.save(); 
+    res.redirect(`/products/${req.params.id}`);
+  });
+});
+
 // -=-create-=-
 productRouter.post("/", (req, res) => {
   Product.create(req.body, (err, createdProduct) => {
@@ -69,13 +81,6 @@ productRouter.get("/:id", (req, res) => {
       product: foundProduct,
       tabTitle: foundProduct.name,
     });
-  });
-});
-// -=-seed-=-
-productRouter.get("/seed", (req, res) => {
-  Product.deleteMany({}, (err, allBooks) => {});
-  Product.create(productSeed, (err, data) => {
-    res.redirect("/products");
   });
 });
 
