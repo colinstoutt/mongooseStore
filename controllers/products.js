@@ -1,4 +1,5 @@
 const express = require("express");
+//i would always check the top of your file in case these weird requires/imports are  brought in on accident, the below isn't causing problems but sometimes they will, I've seen it cause issues in react
 const { findByIdAndUpdate } = require("../models/products");
 const productRouter = express.Router();
 const Product = require("../models/products");

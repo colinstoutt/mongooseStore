@@ -25,14 +25,14 @@
         <!-- -=-img-=- -->
         <label for="img">Image(URL)</label>
         <input type="text" name="img" value="<%= product.img %>" /><br />
-
+        <!-- i would change input type to match your schema because the user can put in text and hit submit but that field won't update -->
         <!-- -=-price-=- -->
         <label for="price">Price(USD)</label>
-        <input type="text" name="price" value="<%= product.price %>" /><br />
-
+        <input type="number" name="price" value="<%= product.price %>" /><br />
+        <!-- i would change input type to match your schema because the user can put in text and hit submit but that field won't update -->
         <!-- -=-qty-=- -->
         <label for="qty">Quantity</label>
-        <input type="text" name="qty" value="<%= product.qty %>" /><br />
+        <input type="number" name="qty" value="<%= product.qty %>" /><br />
 
         <input type="submit" value="Edit Fish" />
       </form>
